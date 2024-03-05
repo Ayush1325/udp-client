@@ -78,8 +78,9 @@ int main(void) {
   total_cycles = timing_cycles_get(&start_time, &end_time);
   total_ns = timing_cycles_to_ns(total_cycles);
 
-  LOG_INF("Total time: %llu ns\n", total_ns);
-  LOG_INF("Time per request: %llu ns\n", total_ns / REQS);
+  LOG_INF("Total time: %llu ns", total_ns);
+  LOG_INF("Time per request: %llu ns", total_ns / REQS);
+  LOG_INF("Time per request: %llu ms", total_ns / (REQS * 1000000));
 
   timing_stop();
 
